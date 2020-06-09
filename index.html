@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minesweeper</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700,700i|Lobster&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="initGame()">
+
+    <div class="header">
+        <h1>Mine Sweeper</h1>
+    </div>
+
+    <div class="information">
+        <button class="set-mode" onclick="setMode(this)">Dark Mode</button>
+        <span class="best-score">Best Score: <b></b></span><br />
+        <span class="mines-left-counter">Mines Left: <b></b> | </span>
+        <span class="stopwatch">Time: <b>00:00</b> | </span>
+        <span class="lives-count">Lives: <b>❤️❤️❤️</b></span></p>
+        <button onclick="restart(4, 4, 2)">Easy</button>
+        <button onclick="restart(8, 8, 12)">Hard</button>
+        <button onclick="restart(12, 12, 30)">Expert</button>
+        <button onclick="customGame()">Custom</button>
+        <br />
+        <button class="hints" onclick="getHint()">Hint <span class="hints-count">💡💡💡</span></button>
+        <button class="safe-clicks" onclick="getSafeClick()">Safe-Click <span
+                class="safe-clicks-count">🎁🎁🎁</span></button>
+        <button class="back" onclick="undoClicked()">Undo 👈🏽</button>
+    </div>
+
+    <div class="modal-game-over" hidden="true">
+        Game Over!<br />
+        <button class="restart" onclick="restart()">Play Again</button>
+    </div>
+
+    <div class="modal-victorious" hidden="true">
+        Victorious!<br />
+        <button class="restart" onclick="restart()">Play Again</button>
+    </div>
+
+    <div class="game-board" oncontextmenu="return false"></div>
+
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
